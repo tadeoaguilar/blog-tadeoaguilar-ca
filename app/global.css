@@ -1,5 +1,11 @@
 @import 'tailwindcss';
 
+@theme{
+  --color-blog-silver: #BFBFBF;
+  --color-blog-cardinal: #8F2541;
+  --color-blog-raisinBlack: #1D1D27;
+}
+
 ::selection {
   background-color: #47a3f3;
   color: #fefefe;
@@ -61,7 +67,7 @@ html {
 }
 
 .prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
+  @apply bg-neutral-50 dark:bg-[#FF0BAC] rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
 }
 
 .prose code {
