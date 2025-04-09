@@ -14,7 +14,7 @@ My expertise spans several domains: `}
  </p>
       <ol className="list-disc list-inside space-y-2 mb-6 ml-4 marker:text-blog-cardinal text-3xl">
         <li>Cloud Computing - Designing scalable, resilient architectures</li>
-        <li>Security - Implementing robust protection frameworks for modern systems</li>
+        <li>Security - Implement ing robust protection frameworks for modern systems</li>
         <li>Microservices - Breaking down monoliths into manageable, scalable components</li>
         <li>Mobile & Web Development - Creating seamless cross-platform experiences</li>
         <li>ERP Financial Consulting - Translating business requirements into technical solutions</li>
