@@ -1,7 +1,9 @@
+// app/blog/[slug]/page.tsx
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
+import Link from 'next/link'
 
 export async function generateStaticParams() {
   let posts = getBlogPosts()
@@ -51,15 +53,20 @@ export function generateMetadata({ params }) {
   }
 }
 
-export default function Blog({ params }) {
+export default function BlogPost({ params }) {
   let post = getBlogPosts().find((post) => post.slug === params.slug)
 
   if (!post) {
     notFound()
   }
 
+  // Calculate read time
+  const wordsPerMinute = 200;
+  const words = post.content.split(/\s+/).length;
+  const readTime = Math.ceil(words / wordsPerMinute);
+
   return (
-    <section>
+    <article className="min-h-screen bg-gradient-to-b from-lavender-soft/10 to-white-warm">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -77,22 +84,94 @@ export default function Blog({ params }) {
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
               '@type': 'Person',
-              name: 'My Portfolio',
+              name: 'Tadeo Aguilar',
             },
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
-        </p>
+      
+      {/* Article Header */}
+      <header className="bg-gradient-to-br from-lavender-soft via-white-warm to-white pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <Link 
+            href="/blog"
+            className="inline-flex items-center text-sky-tech hover:text-sky-600 transition-colors mb-8"
+          >
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to articles
+          </Link>
+          
+          <h1 className="text-4xl sm:text-5xl font-light text-indigo-deep mb-6 leading-tight">
+            {post.metadata.title}
+          </h1>
+          
+          <div className="flex items-center justify-center gap-4 text-slate-pro/70">
+            <span>Tadeo Aguilar</span>
+            <span>•</span>
+            <time dateTime={post.metadata.publishedAt}>
+              {formatDate(post.metadata.publishedAt)}
+            </time>
+            <span>•</span>
+            <span>{readTime} min read</span>
+          </div>
+        </div>
+      </header>
+      
+      {/* Article Content */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="bg-white rounded-2xl shadow-sm border border-lavender-soft/20 p-8 sm:p-12 -mt-8">
+          <div className="prose prose-lg prose-slate max-w-none
+            prose-headings:font-light prose-headings:text-slate-pro
+            prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
+            prose-p:text-slate-pro prose-p:leading-relaxed
+            prose-a:text-sky-tech prose-a:no-underline hover:prose-a:underline
+            prose-strong:text-slate-pro prose-strong:font-medium
+            prose-code:text-sky-tech prose-code:bg-lavender-soft/30 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+            prose-pre:bg-navy-deep prose-pre:text-white
+            prose-blockquote:border-l-4 prose-blockquote:border-teal-balance prose-blockquote:bg-lavender-soft/20 prose-blockquote:py-1 prose-blockquote:px-6 prose-blockquote:italic
+            prose-ul:list-disc prose-ol:list-decimal
+            prose-img:rounded-lg prose-img:shadow-md">
+            <CustomMDX source={post.content} />
+          </div>
+        </div>
+        
+        {/* Article Footer */}
+        <div className="mt-12 pt-8 border-t border-lavender-soft">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
+            <Link 
+              href="/blog"
+              className="text-sky-tech hover:text-sky-600 transition-colors flex items-center gap-2"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+              </svg>
+              View all articles
+            </Link>
+            
+            <div className="flex gap-4">
+              <span className="text-slate-pro/60">Share:</span>
+              <a 
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.metadata.title)}&url=${baseUrl}/blog/${post.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-pro hover:text-sky-tech transition-colors"
+              >
+                Twitter
+              </a>
+              <a 
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${baseUrl}/blog/${post.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-pro hover:text-sky-tech transition-colors"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <article className="prose">
-        <CustomMDX source={post.content} />
-      </article>
-    </section>
+    </article>
   )
 }
