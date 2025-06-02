@@ -12,7 +12,7 @@ export const Hero: FC = () => {
         </h1>
         
         <p className="text-lg sm:text-xl text-slate-pro mb-12 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-          Welcome to my tranquil tech space. As a Software Architect with over 25 years in the industry, 
+          Welcome to my tranquil tech space. As a Solution Architect with over 25 years in the industry, 
           I share insights on architectural decisions, implementation strategies, and bridging the gap 
           between business objectives and technical execution.
         </p>

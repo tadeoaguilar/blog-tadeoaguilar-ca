@@ -18,7 +18,7 @@ export const Header: FC = () => {
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex justify-between items-center">
           <Link href="/" className="text-2xl font-light text-indigo-deep hover:text-sky-tech transition-colors">
-            Tranquil Tech
+             <span className="font-semibold">PERCEPTRONICS</span>
           </Link>
           
           <ul className="hidden md:flex gap-8 lg:gap-10">
