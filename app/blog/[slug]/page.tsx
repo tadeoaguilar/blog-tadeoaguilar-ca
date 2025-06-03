@@ -1,6 +1,6 @@
 // app/blog/[slug]/page.tsx
 import { notFound } from 'next/navigation'
-import { CustomMDX } from 'app/components/mdx'
+//import { CustomMDX } from 'app/components/mdx'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
 import Link from 'next/link'
@@ -133,7 +133,7 @@ export default function BlogPost({ params }) {
             prose-blockquote:border-l-4 prose-blockquote:border-teal-balance prose-blockquote:bg-lavender-soft/20 prose-blockquote:py-1 prose-blockquote:px-6 prose-blockquote:italic
             prose-ul:list-disc prose-ol:list-decimal
             prose-img:rounded-lg prose-img:shadow-md">
-            <CustomMDX source={post.content} />
+  {/*           <CustomMDX source={post.content} />*/}
           </div>
         </div>
         
