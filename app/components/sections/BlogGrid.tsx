@@ -36,10 +36,10 @@ export const BlogGrid: FC<BlogGridProps> = ({ posts }) => {
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div className="text-center mb-16">
-        <h2 className="text-3xl sm:text-4xl font-normal text-slate-pro mb-4">
+        <h2 className="text-3xl sm:text-4xl font-normal text-text-gradient-white mb-4">
           Latest Articles
         </h2>
-        <p className="text-slate-pro/80">
+        <p className="text-text-gradient-light/80">
           Thoughtful perspectives on modern technology and peaceful productivity
         </p>
       </div>

@@ -48,12 +48,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-slate-pro bg-white-warm',
+        'text-text-gradient-light bg-gradient-to-b from-gradient-dark-start via-gradient-dark-mid to-gradient-dark-end',
         GeistSans.variable,
         GeistMono.variable
       )}
     >
-      <body className="antialiased min-h-screen flex flex-col">
+      <body className="antialiased min-h-screen flex flex-col bg-gradient-to-b from-gradient-dark-start via-gradient-dark-mid to-gradient-dark-end">
         <Header />
         <main className="flex-grow">
           {children}

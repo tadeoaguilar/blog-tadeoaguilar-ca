@@ -17,6 +17,16 @@ module.exports = {
         'navy-deep': '#0F172A',
         'slate-dark': '#1E293B',
         
+        // New gradient colors from layout.jpeg
+        'gradient-dark-start': '#1a1a2e',
+        'gradient-dark-mid': '#16213e',
+        'gradient-dark-end': '#2d1b69',
+        'gradient-purple-start': '#4a4e69',
+        'gradient-purple-mid': '#6b46c1',
+        'gradient-purple-end': '#7c3aed',
+        'text-gradient-light': '#e2e8f0',
+        'text-gradient-white': '#ffffff',
+        
         // Keep existing blog colors for compatibility
         'blog-silver': '#BFBFBF',
         'blog-cardinal': '#8F2541',

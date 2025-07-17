@@ -14,10 +14,10 @@ const navItems = [
 
 export const Header: FC = () => {
   return (
-    <header className="sticky top-0 z-50 bg-white-warm/95 backdrop-blur-md border-b border-lavender-soft/50">
+    <header className="sticky top-0 z-50 bg-gradient-dark-start/95 backdrop-blur-md border-b border-gradient-purple-start/50">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl font-light text-indigo-deep hover:text-sky-tech transition-colors">
+          <Link href="/" className="text-2xl font-light text-text-gradient-white hover:text-gradient-purple-end transition-colors">
              <span className="font-semibold">PERCEPTRONICS</span>
           </Link>
           
@@ -26,7 +26,7 @@ export const Header: FC = () => {
               <li key={item.href}>
                 <Link 
                   href={item.href}
-                  className="text-slate-pro hover:text-sky-tech transition-colors duration-300"
+                  className="text-text-gradient-light hover:text-gradient-purple-end transition-colors duration-300"
                 >
                   {item.label}
                 </Link>
@@ -35,7 +35,7 @@ export const Header: FC = () => {
           </ul>
 
           {/* Mobile menu button */}
-          <button name='button' className="md:hidden text-slate-pro hover:text-sky-tech">
+          <button name='button' className="md:hidden text-text-gradient-light hover:text-gradient-purple-end">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>

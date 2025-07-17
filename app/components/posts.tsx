@@ -5,7 +5,7 @@ export function BlogPosts() {
   let allBlogs = getBlogPosts()
 
   return (
-    <div>
+    <div className="space-y-6">
       {allBlogs
         .sort((a, b) => {
           if (
@@ -18,16 +18,30 @@ export function BlogPosts() {
         .map((post) => (
           <Link
             key={post.slug}
-            className="flex flex-col space-y-1 mb-4"
+            className="group block"
             href={`/blog/${post.slug}`}
           >
-            <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
-                {formatDate(post.metadata.publishedAt, false)}
-              </p>
-              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
-                {post.metadata.title}
-              </p>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-gradient-purple-start/20 hover:border-gradient-purple-mid/40 transition-all duration-300 hover:shadow-2xl hover:shadow-gradient-purple-mid/20">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div className="flex-1">
+                  <h3 className="text-xl font-light text-text-gradient-white group-hover:text-gradient-purple-end transition-colors mb-2">
+                    {post.metadata.title}
+                  </h3>
+                  {post.metadata.summary && (
+                    <p className="text-text-gradient-light/70 group-hover:text-text-gradient-light transition-colors">
+                      {post.metadata.summary}
+                    </p>
+                  )}
+                </div>
+                <div className="flex items-center gap-4 text-sm text-text-gradient-light/60">
+                  <time className="tabular-nums">
+                    {formatDate(post.metadata.publishedAt, false)}
+                  </time>
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
             </div>
           </Link>
         ))}

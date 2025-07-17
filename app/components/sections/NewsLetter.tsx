@@ -22,19 +22,19 @@ export const Newsletter: FC = () => {
   };
   
   return (
-    <section className="bg-gradient-to-br from-white-warm to-lavender-soft py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-gradient-to-br from-gradient-purple-mid to-gradient-purple-end py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-xl mx-auto text-center">
-        <h3 className="text-2xl sm:text-3xl font-normal text-indigo-deep mb-4">
+        <h3 className="text-2xl sm:text-3xl font-normal text-text-gradient-white mb-4">
           Stay Connected
         </h3>
         
-        <p className="text-slate-pro mb-8">
+        <p className="text-text-gradient-light mb-8">
           Join our peaceful community of developers and designers. 
           Receive weekly insights on mindful technology.
         </p>
         
         {status === 'success' ? (
-          <div className="bg-teal-balance/10 text-teal-balance py-3 px-4 rounded-lg">
+          <div className="bg-gradient-purple-end/20 text-text-gradient-white py-3 px-4 rounded-lg">
             ✓ Successfully subscribed! Check your email to confirm.
           </div>
         ) : (
@@ -45,7 +45,7 @@ export const Newsletter: FC = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
               required
-              className="flex-1 px-6 py-3.5 border-2 border-lavender-soft rounded-lg text-base focus:outline-none focus:border-sky-tech transition-colors"
+              className="flex-1 px-6 py-3.5 border-2 border-gradient-purple-start/30 bg-white/10 backdrop-blur-sm rounded-lg text-base text-text-gradient-white placeholder-text-gradient-light/50 focus:outline-none focus:border-gradient-purple-end transition-colors"
               disabled={status === 'loading'}
             />
             <Button 

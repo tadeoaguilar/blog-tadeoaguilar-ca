@@ -9,6 +9,14 @@
         --color-indigo-deep: #4338CA;
         --color-navy-deep: #0F172A;
         --color-slate-dark: #1E293B;
+        --color-gradient-dark-start: #1a1a2e;
+        --color-gradient-dark-mid: #16213e;
+        --color-gradient-dark-end: #2d1b69;
+        --color-gradient-purple-start: #4a4e69;
+        --color-gradient-purple-mid: #6b46c1;
+        --color-gradient-purple-end: #7c3aed;
+        --color-text-gradient-light: #e2e8f0;
+        --color-text-gradient-white: #ffffff;
         --color-blog-silver: #BFBFBF;
         --color-blog-cardinal: #8F2541;
         --color-blog-raisinBlack: #1D1D27;
