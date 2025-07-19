@@ -1,0 +1,59 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "",
+      "description": "",
+      "detailedDescription": "",
+      "category": "cloud-architecture",
+      "technologies": [],
+      "duration": "",
+      "year": "",
+      "status": "completed",
+      "highlights": [],
+      "challenges": "",
+      "solutions": "",
+      "impact": "",
+      "links": {
+        "demo": "",
+        "github": "",
+        "case_study": ""
+      },
+      "images": [],
+      "client": "",
+      "teamSize": ""
+    }
+  ],
+  "categories": [
+    {
+      "id": "cloud-architecture",
+      "name": "Cloud Architecture",
+      "description": "Cloud migration, infrastructure design, and scalability solutions",
+      "color": "blue"
+    },
+    {
+      "id": "enterprise-architecture",
+      "name": "Enterprise Architecture",
+      "description": "Large-scale system design and enterprise integration",
+      "color": "green"
+    },
+    {
+      "id": "software-architecture",
+      "name": "Software Architecture",
+      "description": "Application design patterns and development frameworks",
+      "color": "purple"
+    },
+    {
+      "id": "digital-transformation",
+      "name": "Digital Transformation",
+      "description": "Modernization and process optimization projects",
+      "color": "orange"
+    }
+  ],
+  "stats": {
+    "totalProjects": 0,
+    "yearsExperience": 0,
+    "technologiesUsed": 0,
+    "clientsSatisfied": 0
+  }
+}
