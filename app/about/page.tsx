@@ -4,6 +4,14 @@ import { Timeline } from '../components/sections/Timeline';
 import { Button } from '../components/ui/Button';
 import aboutData from '../data/about.json';
 
+interface TimelineItem {
+  id: string;
+  year: string;
+  title: string;
+  description: string;
+  type: 'career' | 'education' | 'certification';
+}
+
 const AboutPage: FC = () => {
   const { profile, experience, education, certifications, skills, timeline } = aboutData;
 
@@ -88,7 +96,7 @@ const AboutPage: FC = () => {
             <h2 className="text-3xl font-semibold text-text-gradient-white mb-12 text-center">
               Professional Journey
             </h2>
-            <Timeline items={timeline} />
+            <Timeline items={timeline as TimelineItem[]} />
           </div>
 
           {/* Experience Details */}

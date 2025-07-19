@@ -4,6 +4,30 @@ import { ProjectTimeline } from '../components/sections/ProjectTimeline';
 import { Button } from '../components/ui/Button';
 import projectsData from '../data/projects.json';
 
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  detailedDescription: string;
+  category: string;
+  technologies: string[];
+  duration: string;
+  year: string;
+  status: 'completed' | 'in-progress' | 'planned';
+  highlights: string[];
+  challenges?: string;
+  solutions?: string;
+  impact?: string;
+  links?: {
+    demo?: string;
+    github?: string;
+    case_study?: string;
+  };
+  images?: string[];
+  client?: string;
+  teamSize?: string;
+}
+
 const ProjectsPage: FC = () => {
   const { projects, categories, stats } = projectsData;
 
@@ -106,7 +130,7 @@ const ProjectsPage: FC = () => {
               Project Timeline
             </h2>
             {projects.length > 0 ? (
-              <ProjectTimeline projects={projects} categories={categories} />
+              <ProjectTimeline projects={projects as Project[]} categories={categories} />
             ) : (
               <div className="text-center py-12">
                 <div className="text-6xl mb-4">🚧</div>
