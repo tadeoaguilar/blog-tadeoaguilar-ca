@@ -1,20 +1,23 @@
-import { Hero } from './components/sections/Hero'
-import { BlogGrid } from './components/sections/BlogGrid'
-import { FeaturedQuote } from './components/sections/FeaturedQuote'
-import { Newsletter } from './components/sections/NewsLetter'
-import { SuccessBanner } from './components/ui/SuccessBanner'
-import { getBlogPosts } from './blog/utils'
+'use client';
+
+import { Header } from './components/sections/Header';
+import { Hero } from './components/sections/Hero';
+import { About } from './components/sections/About';
+import { Expertise } from './components/sections/Expertise';
+import { BlogPosts } from './components/sections/BlogPosts';
+import { Footer } from './components/sections/Footer';
 
 export default function HomePage() {
-  const posts = getBlogPosts()
-  
   return (
-    <>
-      <SuccessBanner message="New article published: 'Finding Balance in Code' - Read now!" />
-      <Hero />
-      <BlogGrid posts={posts} />
-      <FeaturedQuote />
-      <Newsletter />
-    </>
-  )
+    <div className="min-h-screen bg-slate-950">
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Expertise />
+        <BlogPosts />
+      </main>
+      <Footer />
+    </div>
+  );
 }

@@ -1,0 +1,6 @@
+Architecture preference: Would you like to keep the multi-page structure (home, about, blog, contact) or convert to a single-page application like the new design?
+Reply:Convert to a single page application, you can delete or remove the previous content and start from scratch
+Content migration: Should we preserve your existing blog posts and projects, or start fresh with the sample content from the new design?
+Reply: Start fresh, new app, remove old project
+Implementation approach: Would you prefer to:
+Reply:Complete overhaul all at once
